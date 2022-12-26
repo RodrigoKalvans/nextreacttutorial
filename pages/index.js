@@ -1,9 +1,5 @@
+import Header from '../components/Header'
 import { useState } from 'react';
-
-function Header({title}) {
-  console.log(title);
-  return <h1>{title ? title : "Default title"}</h1>;
-}
 
 export default function HomePage() {
   const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
@@ -11,13 +7,12 @@ export default function HomePage() {
   const [likes, setLikes] = useState(0);
 
   function handleClick() {
-    console.log("increment like count")
-    setLikes(likes + 1)
+    setLikes(likes + 1);
   }
 
   return (
     <div>
-      <Header title="Develop. Preview. Ship. 🚀" />
+      <Header />
       <ul>
         {names.map((name) => (
           <li key={name}>{name}</li>
